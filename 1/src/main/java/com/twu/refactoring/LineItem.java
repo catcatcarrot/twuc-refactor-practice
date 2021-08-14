@@ -1,12 +1,11 @@
 package com.twu.refactoring;
 
 public class LineItem {
-	private String description;
-	private double price;
-	private int quantity;
+	private final String description;
+	private final double price;
+	private final int quantity;
 
 	public LineItem(String description, double price, int quantity) {
-		super();
 		this.description = description;
 		this.price = price;
 		this.quantity = quantity;

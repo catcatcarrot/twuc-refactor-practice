@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Order {
-    String name;
-    String address;
-    List<LineItem> lineItems;
+    private final String name;
+    private final String address;
+    private final List<LineItem> lineItems;
 
     public Order(String name, String address, List<LineItem> lineItems) {
         this.name = name;
