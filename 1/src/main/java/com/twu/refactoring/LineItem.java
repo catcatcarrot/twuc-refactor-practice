@@ -12,19 +12,11 @@ public class LineItem {
 		this.quantity = quantity;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-    double totalAmount() {
+	double totalAmount() {
         return price * quantity;
     }
+
+	public String getLineItemInfo() {
+		return description + '\t' + price + '\t' + quantity + '\t' + totalAmount() + '\n';
+	}
 }
