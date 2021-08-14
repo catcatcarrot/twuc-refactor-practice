@@ -27,9 +27,8 @@ public class OrderReceipt {
 //        output.append(order.getCustomerLoyaltyNumber());
 
 		// prints lineItems
-        for (LineItem lineItem : order.getLineItems()) {
-			output.append(lineItem.getLineItemInfo());
-		}
+		String allLineItemInfo = order.getAllLineItemInfo();
+		output.append(allLineItemInfo);
 
 		// prints the state tax
 		output.append("Sales Tax").append('\t').append(order.getTotalTax());
