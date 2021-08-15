@@ -18,7 +18,7 @@ public class Customer {
 
     public String statement() {
         Iterator<Rental> rentals = rentalList.iterator();
-        StringBuilder result = new StringBuilder("Rental Record for " + name + "\n");
+        StringBuilder result = new StringBuilder(getRentalRecordHeader());
 
         double totalAmount = 0;
         int frequentRenterPoints = 0;
@@ -33,9 +33,21 @@ public class Customer {
             totalAmount += each.getAmount();
         }
 
-        result.append("Amount owed is ").append(totalAmount).append("\n");
-        result.append("You earned ").append(frequentRenterPoints).append(" frequent renter points");
+        result.append(getTotalAmountInfo(totalAmount));
+        result.append(getFrequentRenterPointsInfo(frequentRenterPoints));
         return result.toString();
+    }
+
+    private String getFrequentRenterPointsInfo(int frequentRenterPoints) {
+        return "You earned " + frequentRenterPoints + " frequent renter points";
+    }
+
+    private String getTotalAmountInfo(double totalAmount) {
+        return "Amount owed is " + totalAmount + "\n";
+    }
+
+    private String getRentalRecordHeader() {
+        return "Rental Record for " + name + "\n";
     }
 
 }
