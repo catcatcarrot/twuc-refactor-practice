@@ -5,8 +5,8 @@ import java.util.Iterator;
 
 public class Customer {
 
-    private String name;
-    private ArrayList<Rental> rentalList = new ArrayList<Rental>();
+    private final String name;
+    private final ArrayList<Rental> rentalList = new ArrayList<Rental>();
 
     public Customer(String name) {
         this.name = name;
@@ -17,11 +17,11 @@ public class Customer {
     }
 
     public String statement() {
-        double totalAmount = 0;
-        int frequentRenterPoints = 0;
         Iterator<Rental> rentals = rentalList.iterator();
         StringBuilder result = new StringBuilder("Rental Record for " + name + "\n");
 
+        double totalAmount = 0;
+        int frequentRenterPoints = 0;
         while (rentals.hasNext()) {
             Rental each = rentals.next();
             frequentRenterPoints++;
@@ -33,8 +33,8 @@ public class Customer {
             totalAmount += each.getAmount();
         }
 
-        result.append("Amount owed is " + totalAmount + "\n");
-        result.append("You earned " + frequentRenterPoints + " frequent renter points");
+        result.append("Amount owed is ").append(totalAmount).append("\n");
+        result.append("You earned ").append(frequentRenterPoints).append(" frequent renter points");
         return result.toString();
     }
 

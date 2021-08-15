@@ -2,9 +2,9 @@ package com.twu.refactoring;
 
 public class Rental {
 
-    private Movie movie;
+    private final Movie movie;
 
-    private int daysRented;
+    private final int daysRented;
 
     public Rental(Movie movie, int daysRented) {
         this.movie = movie;
@@ -22,7 +22,7 @@ public class Rental {
             case Movie.NEW_RELEASE:
                 thisAmount += daysRented * 3;
                 break;
-            case Movie.CHILDRENS:
+            case Movie.CHILD:
                 thisAmount += 1.5;
                 if (daysRented > 3)
                     thisAmount += (daysRented - 3) * 1.5;
