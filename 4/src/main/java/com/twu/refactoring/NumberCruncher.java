@@ -11,23 +11,19 @@ public class NumberCruncher {
     }
 
     public int countEven() {
-        IntPredicate numberType = x -> x % 2 == 0;
-        return getCount(numberType);
+        return getCount(x -> x % 2 == 0);
     }
 
     public int countOdd() {
-        IntPredicate numberType = x -> x % 2 == 1;
-        return getCount(numberType);
+        return getCount(x -> x % 2 == 1);
     }
 
     public int countPositive() {
-        IntPredicate numberType = x -> x >= 0;
-        return getCount(numberType);
+        return getCount(x -> x >= 0);
     }
 
     public int countNegative() {
-        IntPredicate numberType = x -> x < 0;
-        return getCount(numberType);
+        return getCount(x -> x < 0);
     }
 
     private int getCount(IntPredicate numberType) {
