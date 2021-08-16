@@ -13,6 +13,7 @@ public class DateParser {
         KNOWN_TIME_ZONES.put("UTC", TimeZone.getTimeZone("UTC"));
     }
 
+    //TODO: DELETE comments
     /**
      * Takes a date in ISO 8601 format and returns a date
      *
@@ -26,6 +27,14 @@ public class DateParser {
         this.dateAndTimeString = dateAndTimeString;
     }
 
+    //TODO: SOLUTION 1: use Enum for (YEAR, MONTH, DATE, HOUR, MINUTE)
+
+    //TODO: SOLUTION 2: extract to different sub-class of (MonthParser, TimeParser, etc) and parent class BaseParser.
+    // In BaseParser, you can have base methods:
+    // parseValue: parse values
+    // checkLimit: check characters limitation
+    // parseToInt: check if value can be parsed to integer
+    // getPartOfDateOrTime: get date or time value
     public Date parse() {
 
         int year = parse(0, 4, "Year string is less than 4 characters", "Year is not an integer", 2000, 2012, "Year cannot be less than 2000 or more than 2012");

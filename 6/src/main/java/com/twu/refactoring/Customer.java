@@ -5,6 +5,7 @@ import java.util.Iterator;
 
 public class Customer {
 
+    //TODO: check codebase twuc-refactor-team-b (Refactor practice 1)
     private final String name;
     private final ArrayList<Rental> rentalList = new ArrayList<Rental>();
 

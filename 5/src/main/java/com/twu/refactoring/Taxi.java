@@ -19,6 +19,13 @@ public class Taxi {
         this.peakTime = peakTime;
     }
 
+    //TODO: inline variables and make this look easier
+
+    // public double getTaxiCharge() {
+    //     double totalTaxiCharge = 0;
+    //     return airConditioned ? getChargeByAirConditioned(totalTaxiCharge, PRE_RATE_CHANGE_AC_RATE, POST_RATE_CHANGE_AC_RATE)
+    //             : getChargeByAirConditioned(totalTaxiCharge, PRE_RATE_CHANGE_NON_AC_RATE, POST_RATE_CHANGE_NON_AC_RATE);
+    // }
     public double getTaxiCharge() {
         double totalTaxiCharge = 0;
         if (airConditioned) {
@@ -30,6 +37,7 @@ public class Taxi {
     }
 
     private double getChargeByAirConditioned(double totalTaxiCharge, int preRateChangeAcRate, int postRateChangeAcRate) {
+        // TODO: can extract to different methods to calculate different kinds of fees
         int totalKms = this.totalKms;
         double peakTimeMultiple = peakTime ? PEAK_TIME_MULTIPLIER : OFF_PEAK_MULTIPLIER;
         totalTaxiCharge += Math.min(RATE_CHANGE_DISTANCE, totalKms) * preRateChangeAcRate * peakTimeMultiple;

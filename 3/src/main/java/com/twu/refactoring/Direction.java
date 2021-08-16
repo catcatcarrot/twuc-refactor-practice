@@ -16,6 +16,8 @@ public class Direction {
     }
 
     private Direction getDirection(char toN, char toS) {
+        //TODO: SOLUTION1: extract NSEW to Enum
+        //TODO: SOLUTION2: extract NSEW to different sub-class and inherit from parent class
         switch (direction) {
             case 'N':
                 return new Direction(toN);
