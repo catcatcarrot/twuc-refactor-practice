@@ -3,6 +3,7 @@ package com.twu.refactoring;
 import java.util.Arrays;
 import java.util.function.IntPredicate;
 
+//TODO: this is awesome
 public class NumberCruncher {
     private final int[] numbers;
 

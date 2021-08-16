@@ -25,14 +25,14 @@ public class Order {
     public double getTotalTax() {
         return lineItems
                 .stream()
-                .mapToDouble(lineItem -> lineItem.totalAmount() * .10)
+                .mapToDouble(lineItem -> lineItem.totalAmount() * .10) //TODO: 0.10 extract to constant
                 .sum();
     }
 
     public double getTotal() {
         return lineItems
                 .stream()
-                .mapToDouble(lineItem -> lineItem.totalAmount() + lineItem.totalAmount() * .10)
+                .mapToDouble(lineItem -> lineItem.totalAmount() + lineItem.totalAmount() * .10) //TODO: 0.10 extract to constant
                 .sum();
     }
 
